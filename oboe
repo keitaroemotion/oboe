@@ -6,8 +6,9 @@
 # display key
 # display value
 
-WORDS_DIR  = "/usr/local/etc/oboe"
-WORDS_FILE = File.join(WORDS_DIR, "words.txt")
+WORDS_DIR          = "/usr/local/etc/oboe"
+WORDS_FILE_DEFAULT = File.join(WORDS_DIR, "words.txt")
+WORDS_FILE         = ARGV[0] || WORDS_FILE_DEFAULT
 
 abort("file missing at: #{WORDS_FILE}") if !File.exist?(WORDS_FILE)
 
@@ -22,15 +23,18 @@ lines = lines
           }
 
 def disp(x)
-  print "#{x}: [q: Quit]"
+  print "#{x}"
+  input = $stdin.gets.chomp 
+  abort if input =~ /[qQ]/
+  input
 end
 
-lines.each { |k, v|
+def play(lines) 
+  k, v = lines[rand(0..lines.size-1)]
   disp k
-  input = gets.chomp 
-  if input =~ /[qQ]/
-    abort
-  else
-    disp v.strip
-  end
-}
+  disp "[#{v.strip}]"
+  puts
+  play(lines)
+end
+
+play lines

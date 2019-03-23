@@ -1,1 +1,16 @@
-数字资产, デジタル資産 Shùzì zīchǎn
+数字资产, デジタル資産 | Shùzì zīchǎn
+比特币, Bitcoin | Bǐtè bì
+比特币现金, Bitcoin Cash | Bǐtè bì xiànjīn
+以太坊, Ethereum | Yǐtài fāng
+以太坊经典, Ethereum Classic | Yǐtài fāng jīngdiǎn
+达世币, Dash | Dá shì bì
+莱特币, Litecoin | Láitè bì
+门罗币, Monero | Mén luó bì
+瑞波币, Ripple | Ruìbō bì
+字节币, Bytecoin | Zì jié bì
+狗狗币, Dogecoin | Gǒu gǒu bì
+新经币, NEM | Xīn jīng bì
+恒星币, Stellar Lumens | Héngxīng bì
+质数币, PrimeCoin| Zhìshù bì
+无限币, InfiniteCoin | Wúxiàn bì
+夸克币, Quark | Kuākè bì
