@@ -4,11 +4,19 @@
 # parse the file
 # generate random index (less than maximum line count of the file)
 # display key
-# display value
 
+def args
+  ARGV.select {|a| a.start_with?("-") }
+end
+
+def values
+  ARGV.select {|a| !a.start_with?("-") }
+end
+
+DEFAULT_EDITOR     = "vim"
 WORDS_DIR          = "/usr/local/etc/oboe"
 WORDS_FILE_DEFAULT = File.join(WORDS_DIR, "words.txt")
-WORDS_FILE         = ARGV[0] || WORDS_FILE_DEFAULT
+WORDS_FILE         = values.first || WORDS_FILE_DEFAULT
 
 abort("file missing at: #{WORDS_FILE}") if !File.exist?(WORDS_FILE)
 
@@ -22,6 +30,9 @@ lines = lines
              line.chomp.split(",")
           }
 
+def help
+end
+
 def disp(x)
   print "#{x}"
   input = $stdin.gets.chomp 
@@ -31,7 +42,7 @@ end
 
 def play(lines, idxs) 
   if idxs.size == lines.size
-    idxs = []
+    abort
   end
   
   idx = rand(0..lines.size-1)
@@ -49,4 +60,8 @@ def play(lines, idxs)
   play(lines, idxs)
 end
 
-play lines, []
+if args.include?("-e")
+  system "#{DEFAULT_EDITOR} #{WORDS_FILE_DEFAULT}"
+else
+  play lines, []
+end
