@@ -29,12 +29,24 @@ def disp(x)
   input
 end
 
-def play(lines) 
-  k, v = lines[rand(0..lines.size-1)]
+def play(lines, idxs) 
+  if idxs.size == lines.size
+    idxs = []
+  end
+  
+  idx = rand(0..lines.size-1)
+
+  if idxs.include?(idx)
+    play(lines, idxs)
+  end
+
+  idxs.push idx
+
+  k, v = lines[idx]
   disp k
   disp "[#{v.strip}]"
   puts
-  play(lines)
+  play(lines, idxs)
 end
 
-play lines
+play lines, []
