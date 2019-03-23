@@ -16,6 +16,12 @@ Easy memorization script for terminal users
 
 ## Usage
 
+### default file execution
+
+```
+oboe
+```
+
 ### target file execution
 
 ```
