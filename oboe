@@ -13,6 +13,7 @@ def values
   ARGV.select {|a| !a.start_with?("-") }
 end
 
+APP_NAME           = "oboe"
 DEFAULT_EDITOR     = "vim"
 WORDS_DIR          = "/usr/local/etc/oboe"
 WORDS_FILE_DEFAULT = File.join(WORDS_DIR, "words.txt")
@@ -31,6 +32,12 @@ lines = lines
           }
 
 def help
+  puts
+  puts "#{APP_NAME} -h     ... help"  
+  puts "#{APP_NAME} -e     ... edit default file"  
+  puts "#{APP_NAME}        ... play default file"  
+  puts "#{APP_NAME} [file] ... play selected file"  
+  puts
 end
 
 def disp(x)
@@ -60,7 +67,9 @@ def play(lines, idxs)
   play(lines, idxs)
 end
 
-if args.include?("-e")
+if args.include?("-h")
+  help
+elsif args.include?("-e")
   system "#{DEFAULT_EDITOR} #{WORDS_FILE_DEFAULT}"
 else
   play lines, []

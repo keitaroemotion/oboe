@@ -16,9 +16,24 @@ Easy memorization script for terminal users
 
 ## Usage
 
+### target file execution
+
 ```
 oboe [file]
 ```
+
+### Help menu
+
+```
+oboe -h
+```
+
+### Edit default file:
+
+```
+oboe -e
+```
+
 
 The file structure should be:
 
