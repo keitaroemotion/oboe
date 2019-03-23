@@ -40,7 +40,7 @@ def play(lines, idxs)
     play(lines, idxs)
   end
 
-  idxs.push idx
+  idxs = idxs.push idx
 
   k, v = lines[idx]
   disp k
