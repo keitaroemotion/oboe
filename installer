@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+cp oboe /usr/local/bin
+mkdir -p /usr/local/etc/oboe
+cp words.txt /usr/local/etc/oboe

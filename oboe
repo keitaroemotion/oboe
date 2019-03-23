@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+# read a dsl file
+# parse the file
+# generate random index (less than maximum line count of the file)
+# display key
+# display value
+
+WORDS_DIR  = "/usr/local/etc/oboe"
+WORDS_FILE = File.join(WORDS_DIR, "words.txt")
+
+abort("file missing at: #{WORDS_FILE}") if !File.exist?(WORDS_FILE)
+
+lines = File.open(WORDS_FILE, "r").each_line.to_a
+
+lines = lines
+          .select {|line| 
+             line =~ /\w+[\,]?\w+/ 
+          }
+          .map {|line|
+             line.chomp.split(",")
+          }
+
+def disp(x)
+  print "#{x}: [q: Quit]"
+end
+
+lines.each { |k, v|
+  disp k
+  input = gets.chomp 
+  if input =~ /[qQ]/
+    abort
+  else
+    disp v.strip
+  end
+}
