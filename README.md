@@ -4,8 +4,8 @@ Easy memorization script for terminal users
 
 ## Environment
 
-Ruby > 2.3.x
-Any Unix/Unix-like OS which contains the /usr/local/* directories
+- Ruby > 2.3.x
+- Any Unix/Unix-like OS which contains the `/usr/local/*` directories
 
 
 ## Installation
