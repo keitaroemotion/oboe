@@ -14,3 +14,4 @@
 质数币, PrimeCoin| Zhìshù bì
 无限币, InfiniteCoin | Wúxiàn bì
 夸克币, Quark | Kuākè bì
+块链技术, ブロックチェーン技術 | Kuài liàn jìshù
